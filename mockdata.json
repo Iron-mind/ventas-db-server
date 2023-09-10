@@ -1,0 +1,111 @@
+[{
+    "id": 11,
+    "name": "Camisilla Drac ",
+    "stock": 6,
+    "price": 10000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:10:48.893Z",
+    "updatedAt": "2023-04-18T22:23:32.484Z",
+    "images": []
+}, {
+    "id": 10,
+    "name": "Calzón señorial panda",
+    "stock": 17,
+    "price": 8000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:10:22.412Z",
+    "updatedAt": "2023-04-06T21:42:13.245Z",
+    "images": []
+}, {
+    "id": 2,
+    "name": "Trío de niña",
+    "stock": 17,
+    "price": 15000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:01:24.042Z",
+    "updatedAt": "2023-04-18T22:23:32.598Z",
+    "images": []
+}, {
+    "id": 5,
+    "name": "Boxer calvin Klein de niño",
+    "stock": 15,
+    "price": 5000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:05:53.056Z",
+    "updatedAt": "2023-04-05T20:05:53.056Z",
+    "images": []
+}, {
+    "id": 8,
+    "name": "Cachetero maxi licra",
+    "stock": 9,
+    "price": 8000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:06:57.691Z",
+    "updatedAt": "2023-04-06T20:24:01.031Z",
+    "images": []
+}, {
+    "id": 6,
+    "name": "Boxer calvin Klein alicrado ",
+    "stock": 17,
+    "price": 8000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:06:11.775Z",
+    "updatedAt": "2023-04-18T22:23:32.610Z",
+    "images": []
+}, {
+    "id": 4,
+    "name": "Boxer calvin Klein en algodón",
+    "stock": 19,
+    "price": 9000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:02:34.910Z",
+    "updatedAt": "2023-04-06T20:39:16.365Z",
+    "images": []
+}, {
+    "id": 1,
+    "name": "Cachetero mompirry ",
+    "stock": 20,
+    "price": 10000,
+    "description": "Tallas unica",
+    "status": true,
+    "createdAt": "2023-04-05T19:47:46.977Z",
+    "updatedAt": "2023-04-05T19:47:46.977Z",
+    "images": []
+}, {
+    "id": 3,
+    "name": "Top panda niña ",
+    "stock": 2000,
+    "price": 6000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:02:04.006Z",
+    "updatedAt": "2023-04-05T20:02:04.006Z",
+    "images": []
+}, {
+    "id": 9,
+    "name": "Cachetero maxi licra en algodon",
+    "stock": 19,
+    "price": 10000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:07:21.662Z",
+    "updatedAt": "2023-04-18T18:03:40.006Z",
+    "images": []
+}, {
+    "id": 7,
+    "name": "Cachetero calvin Klein en algodón",
+    "stock": 19,
+    "price": 8000,
+    "description": "",
+    "status": true,
+    "createdAt": "2023-04-05T20:06:35.662Z",
+    "updatedAt": "2023-04-06T20:24:01.033Z",
+    "images": []
+}]

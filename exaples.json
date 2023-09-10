@@ -1,0 +1,32 @@
+[
+    {
+    "id": 1,
+    "name": "sudadera talla 10",
+    "stock": null,
+    "price": null,
+    "description": null
+},
+{
+    "id": 1,
+    "buyer": "Juana de Arco",
+    "state": "inprogress",
+    "total": 90000,
+    "paid": 30000,
+    "contact": null,
+    "description": null,
+    "createdAt": "2022-03-27T17:20:33.076Z",
+    "updatedAt": "2022-03-27T17:20:33.076Z",
+    "seller": null,
+    "userId": null,
+    "sale": null,
+    "incomeId": null,
+    "products": []
+},
+{
+    "role": "seller",
+    "id": 1,
+    "name": "pepeline",
+    "username": "cajero1",
+    "password": "$2a$10$Aq9FQn1ihRMCqMamkr1Ile3aA9jguHUvWvCmFdD/ugMuks/VejXA."
+}
+]
