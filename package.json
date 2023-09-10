@@ -21,10 +21,11 @@
     "pg": "^8.7.3",
     "qr-image": "3.2.0",
     "sequelize": "^6.16.3",
-    "whatsapp-web.js": "1.22.1"
+    "whatsapp-web.js": "1.22.1",
+    "morgan": "1.10.0"
   },
   "devDependencies": {
-    "morgan": "^1.10.0",
+    
     "nodemon": "^2.0.15"
   },
   "type": "module",
