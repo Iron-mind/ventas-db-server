@@ -4,8 +4,9 @@ console.log(config.dbUri);
 //coneccion local
 // const sslConfig = process.env.CONNECTION=="local"?"":"?sslmode=no-verify"
 const sequelize = new Sequelize(`${config.dbUri}`, {
-	logging: false, // set to console.log to see the raw SQL queries
-	native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+	dialect: "postgres",
+	// logging: false, // set to console.log to see the raw SQL queries
+	// native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 	// dialectOptions: process.env.CONNECTION == "local" || {
 	// 	ssl: {
 	// 		require: !(process.env.CONNECTION == "local"),
