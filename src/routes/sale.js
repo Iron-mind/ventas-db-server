@@ -11,7 +11,21 @@ import Client from "../models/Client.js";
 let { product_sale } = sequelize.models;
 
 let router = Router();
-
+export async function createClient(sale){
+  if (sale.contact) {
+        
+    const client = await Client.findOrCreate({
+      where: {
+        phoneNumber: sale.contact,
+      },
+      defaults: {
+        name: sale.buyer,
+        phoneNumber: sale.contact,
+        saleId: sale.id,
+      },
+    })
+  }
+}
 router.get("/", async (req, res, next) => {
   let { name } = req.query;
   if (name) {
@@ -74,11 +88,11 @@ router.post("/", async (req, res, next) => {
         if (!p.id) {
           delete p.id;
           return Product.create({ ...p, status: false }).then((pr) => {
-            sale.addProduct(pr, { through: { units: p.units } });
+            sale.addProduct(pr, { through: { units: p.units , last_price: pr.price} });
           });
         }
         return Product.findByPk(p.id).then((pr) => {
-          sale.addProduct(pr, { through: { units: p.units } });
+          sale.addProduct(pr, { through: { units: p.units  , last_price: pr.price } });
         });
       });
       await Promise.all(promises);
@@ -107,19 +121,8 @@ router.post("/", async (req, res, next) => {
         const message = 'Producto agotado: ' + soldOutProducts.join(', ');
         await sendNotification(message,'/inventario');
       }
-      if (sale.contact) {
-        
-        const client = await Client.findOrCreate({
-          where: {
-            phoneNumber: sale.contact,
-          },
-          defaults: {
-            name: sale.buyer,
-            phoneNumber: sale.contact,
-            saleId: sale.id,
-          },
-        })
-      }
+      await createClient(sale);
+      
     }
     res.send(sale);
   } catch (error) {
@@ -149,11 +152,11 @@ router.put("/", async (req, res) => {
         if (!p.id) {
           delete p.id;
           return Product.create({ ...p, status: false }).then((pr) => {
-            sale.addProduct(pr, { through: { units: p.units } });
+            sale.addProduct(pr, { through: { units: p.units, last_price: pr.price } });
           });
         }
         return Product.findByPk(p.id).then((pr) => {
-          sale.addProduct(pr, { through: { units: p.units } });
+          sale.addProduct(pr, { through: { units: p.units, last_price: pr.price } });
         });
     });
     await Promise.all(promises);
@@ -188,7 +191,8 @@ router.put("/", async (req, res) => {
         const message = 'Producto agotado: ' + soldOutProducts.join(' /n');
         await sendNotification(message, '/inventario');
       }
-    }  
+    }
+    await createClient(sale);
     res.send({ sale, msg: "Se actualizó correctamente" });
   } catch (error) {
     res.send({ msg: "Algo salió mal" });

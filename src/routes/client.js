@@ -6,19 +6,33 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const { name } = req.query;
-    if (!name) {
-      const clients = await Client.findAll({limit: 20});
+    const { name , phoneNumber} = req.query;
+    
+    let clients = [];
+    if (name) {
+      clients = await Client.findAll({
+        where: {
+          name: {
+            			[Op.iLike]: `%${name}%`,
+            		}
+        },
+        limit: 20,
+      });
       return res.send(clients);
     }
-    const clients = await Client.findAll({
+    else if (phoneNumber) {
+      clients = await Client.findAll({
         where: {
-            name: {
-                [Op.iLike]: `%${name}%`
-            }
+          phoneNumber: {
+            			[Op.iLike]: `%${phoneNumber}%`,
+            		}
         },
-        limit: 20
-    });
+        limit: 20,
+      });
+      return res.send(clients);
+    }
+    clients = await Client.findAll({limit: 20});
+      
     res.send(clients);
   } catch (error) {
     console.log(error);
