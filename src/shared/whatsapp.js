@@ -19,13 +19,7 @@ export async function getQRHtmlString(res) {
 	return svg_string;
 }
 
-client.on("ready", () => {
-	console.log("Client is ready!");
-	client.sendMessage(
-		client.info.wid.user + "@c.us",
-		"Ya tienes whatsapp asociado para enviar notificaciones"
-	);
-});
+
 // client.on('message', message => {
 //     console.log(message.body)
 //    // console.log(client.getFormattedNumber(message.from) )
@@ -36,5 +30,16 @@ client.on("ready", () => {
 // 	// 	client.sendMessage(message.from, 'tranquilo, soy programador');
 // 	// }
 // });
+try {
+	client.on("ready", () => {
+		console.log("Client is ready!");
+		client.sendMessage(
+			client.info.wid.user + "@c.us",
+			"Ya tienes whatsapp asociado para enviar notificaciones"
+		);
+	});
 
-client.initialize();
+	client.initialize();
+} catch (e) {
+	console.warn("wp error", e);
+}
