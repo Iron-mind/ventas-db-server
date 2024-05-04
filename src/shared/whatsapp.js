@@ -6,6 +6,11 @@ export const client = new Client({
 		args: ["--no-sandbox"],
 	},
 	authStrategy: new LocalAuth(),
+	webVersionCache:
+	{
+		remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2402.5-beta.html',
+		type: 'remote'
+	}
 });
 
 export async function getQRHtmlString(res) {
